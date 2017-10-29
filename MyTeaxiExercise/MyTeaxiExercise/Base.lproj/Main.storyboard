@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="jgv-Mh-S0o" kind="relationship" relationship="viewControllers" id="RDZ-1B-b5c"/>
+                        <segue destination="wvI-3g-DiR" kind="relationship" relationship="viewControllers" id="Dut-y1-icz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="rxI-hO-LxP">
+            <objects>
+                <navigationController id="wvI-3g-DiR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" id="bg3-Kz-Qnk"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g2e-Vl-pep">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ymi-LC-QWW" kind="relationship" relationship="rootViewController" id="d3X-en-1z1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1rr-Ve-DM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="780" y="576"/>
+        </scene>
+        <!--Vehical Map-->
+        <scene sceneID="46f-bD-ziJ">
+            <objects>
+                <viewController id="Ymi-LC-QWW" customClass="VehicalMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WaK-Jn-iZf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HGd-37-hax">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ymi-LC-QWW" id="zgB-5e-HUl"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HGd-37-hax" firstAttribute="leading" secondItem="qZs-7W-ydh" secondAttribute="leading" id="AfN-Ro-JQj"/>
+                            <constraint firstItem="HGd-37-hax" firstAttribute="bottom" secondItem="qZs-7W-ydh" secondAttribute="bottom" id="CPC-wA-5JJ"/>
+                            <constraint firstItem="HGd-37-hax" firstAttribute="top" secondItem="qZs-7W-ydh" secondAttribute="top" id="LMC-Ix-Idt"/>
+                            <constraint firstItem="HGd-37-hax" firstAttribute="trailing" secondItem="qZs-7W-ydh" secondAttribute="trailing" id="XHC-u8-maB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qZs-7W-ydh"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Vehical Map" id="zQ3-Vq-nhH"/>
+                    <connections>
+                        <outlet property="mapView" destination="HGd-37-hax" id="6pw-Gj-aMk"/>
+                        <segue destination="hJM-sa-zlA" kind="show" identifier="ShowVehicalDetails" id="8tL-H7-tnz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Tj-mM-dW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1733.5999999999999" y="574.36281859070471"/>
+        </scene>
+        <!--Vehical Details View Controller-->
+        <scene sceneID="wgq-NW-JsS">
+            <objects>
+                <viewController id="hJM-sa-zlA" customClass="VehicalDetailsViewController" customModule="MyTeaxiExercise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iT2-uh-Rn8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehical Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0l-0z-P5F">
+                                <rect key="frame" x="16" y="421.5" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehical Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZd-3c-KT2">
+                                <rect key="frame" x="16" y="450" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyTaxi" translatesAutoresizingMaskIntoConstraints="NO" id="jXF-dr-0cJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="333.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jXF-dr-0cJ" firstAttribute="top" secondItem="o1D-8s-ttL" secondAttribute="top" id="0wX-gp-qUY"/>
+                            <constraint firstItem="p0l-0z-P5F" firstAttribute="top" secondItem="jXF-dr-0cJ" secondAttribute="bottom" constant="24" id="1n0-cs-Wfm"/>
+                            <constraint firstItem="p0l-0z-P5F" firstAttribute="leading" secondItem="o1D-8s-ttL" secondAttribute="leading" constant="16" id="28o-0z-VPq"/>
+                            <constraint firstItem="jXF-dr-0cJ" firstAttribute="leading" secondItem="o1D-8s-ttL" secondAttribute="leading" id="4iX-PZ-4dI"/>
+                            <constraint firstItem="jXF-dr-0cJ" firstAttribute="trailing" secondItem="o1D-8s-ttL" secondAttribute="trailing" id="DaE-ES-Ldv"/>
+                            <constraint firstItem="o1D-8s-ttL" firstAttribute="trailing" secondItem="MZd-3c-KT2" secondAttribute="trailing" constant="16" id="EbM-0L-Wkm"/>
+                            <constraint firstItem="MZd-3c-KT2" firstAttribute="leading" secondItem="o1D-8s-ttL" secondAttribute="leading" constant="16" id="Vgi-FG-qux"/>
+                            <constraint firstItem="MZd-3c-KT2" firstAttribute="top" secondItem="p0l-0z-P5F" secondAttribute="bottom" constant="8" id="iiJ-TO-bOl"/>
+                            <constraint firstItem="o1D-8s-ttL" firstAttribute="trailing" secondItem="p0l-0z-P5F" secondAttribute="trailing" constant="16" id="lEE-Jo-61s"/>
+                            <constraint firstItem="jXF-dr-0cJ" firstAttribute="width" secondItem="iT2-uh-Rn8" secondAttribute="width" id="twA-GC-5SP"/>
+                            <constraint firstItem="jXF-dr-0cJ" firstAttribute="height" secondItem="iT2-uh-Rn8" secondAttribute="height" multiplier="0.5" id="zw0-ly-Q8E"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o1D-8s-ttL"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblVehicalState" destination="MZd-3c-KT2" id="1tN-eY-rO2"/>
+                        <outlet property="lblVehicalType" destination="p0l-0z-P5F" id="1TS-p4-NyH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iXH-sD-px1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2537" y="-143"/>
+        </scene>
+        <!--Vehical List-->
+        <scene sceneID="ck7-S9-wB8">
+            <objects>
+                <tableViewController id="nTR-Nw-YN1" customClass="VehicleListViewController" customModule="MyTeaxiExercise" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9KO-9y-90j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="nTR-Nw-YN1" id="shK-j5-kbM"/>
+                            <outlet property="delegate" destination="nTR-Nw-YN1" id="eVQ-aV-dcU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Vehical List" id="uLL-H6-5Ck"/>
+                    <connections>
+                        <segue destination="hJM-sa-zlA" kind="show" identifier="ShowVehicalDetails" action="showDetailViewController:sender:" id="nrR-MW-tCK"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wtG-gz-HKX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1760.8" y="-709.29535232383819"/>
+        </scene>
+        <!--List-->
+        <scene sceneID="dSa-uJ-zwz">
+            <objects>
+                <navigationController id="jgv-Mh-S0o" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="List" id="Y4K-HW-d1Q"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8ec-TH-hzH">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="nTR-Nw-YN1" kind="relationship" relationship="rootViewController" id="D0o-dl-Stw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lQW-Af-DOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="809" y="-709"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="MyTaxi" width="1600" height="940"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="8tL-H7-tnz"/>
+    </inferredMetricsTieBreakers>
+</document>
