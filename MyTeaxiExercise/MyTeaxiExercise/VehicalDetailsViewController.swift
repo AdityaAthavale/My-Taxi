@@ -21,6 +21,7 @@ class VehicalDetailsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //Update data on appear.
         self.lblVehicalType?.text = self.vehical?.type
         self.lblVehicalState?.text = self.vehical?.state
     }

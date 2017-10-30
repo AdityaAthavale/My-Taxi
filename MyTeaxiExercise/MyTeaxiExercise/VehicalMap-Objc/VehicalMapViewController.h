@@ -10,10 +10,11 @@
 #import <MapKit/MapKit.h>
 #import "MyTeaxiExercise-Swift.h"
 
-@interface VehicalMapViewController : UIViewController <MKMapViewDelegate> {
+@interface VehicalMapViewController : UIViewController <MKMapViewDelegate, ServiceLayerDelegate> {
     IBOutlet MKMapView *mapView;
     VehicalModel *model;
     Vehical *selectedVehical;
+    ServiceLayer *serviceLayer;
 }
 
 @end
